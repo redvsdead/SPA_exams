@@ -15,7 +15,7 @@
                     <td>@item.Mark</td>
                     <td>
                         @Html.ActionLink("Remove", "Remove",
-                        new { id = item.Id },
+                        item,
                         new { @class = "btn btn-xs btn-primary" })
                     </td>
                 </tr>

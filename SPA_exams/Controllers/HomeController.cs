@@ -25,6 +25,17 @@ namespace SPA_exams.Controllers
             else return View("Index");
         }
 
+        public ActionResult Remove(ExamResult item)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.Remove(item.Id);
+                //repository.Update(item);
+                return RedirectToAction("Index");
+            }
+            else return View("Index");
+        }
+
         public ActionResult Update(ExamResult item)
         {
             if (ModelState.IsValid && repository.Update(item))
