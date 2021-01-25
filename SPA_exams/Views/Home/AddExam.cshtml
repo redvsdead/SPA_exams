@@ -1,0 +1,23 @@
+﻿@model SPA_exams.Models.ExamResult
+
+<div class="panel-heading">
+    Add new result
+</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Add", "Home"))
+    {
+        <div class="form-group">
+            <label>Semester</label>
+            @Html.TextBoxFor(m => m.Semester, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Subject</label>
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Mark</label>
+            @Html.TextBoxFor(m => m.Mark, new { @class = "form-control"})
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+</div>
