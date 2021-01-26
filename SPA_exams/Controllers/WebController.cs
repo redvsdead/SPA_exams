@@ -12,27 +12,29 @@ namespace SPA_exams.Controllers
     {
         private ExamRepo repo = ExamRepo.Current;
 
-        public IEnumerable<ExamResult> GetAllReservations()
+        public IEnumerable<ExamResult> GetAllExams()
         {
             return repo.GetAll();
         }
 
-        public ExamResult GetReservation(int id)
+        public ExamResult GetExam(int id)
         {
             return repo.Get(id);
         }
 
-        public ExamResult PostReservation(ExamResult item)
+        [HttpPost]
+        public ExamResult CreateExam(ExamResult item)
         {
             return repo.Add(item);
         }
 
-        public bool PutReservation(ExamResult item)
+        [HttpPut]
+        public bool UpdateExam(ExamResult item)
         {
             return repo.Update(item);
         }
 
-        public void DeleteReservation(int id)
+        public void DeleteExam(int id)
         {
             repo.Remove(id);
         }
